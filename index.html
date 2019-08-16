@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Estacionamento Inteligente</title>
+        <link href="centralizar.css" rel="stylesheet" type = "text/css" >
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <style type="text/css">
+        h1{
+            color:midnightblue;
+
+        }
+        h2{
+            color:midnightblue;
+        }
+        h3{
+            color:midnightblue;
+        }
+        h4{
+            color:midnightblue;
+        }
+    body{
+        background-image:url("https://i.screenshot.net/kz3w0cd");   
+    }
+    </style>
+   
+    <body class="container">
+        <div >
+                
+        <p><h1 style="text-align: center;"> Estacionamento Inteligente </h1></p>
+        <h2>Olá!Quer praticidade quando o assunto é estacionar? Tá no lugar certo!</h2>
+ <h3>O estaciona legal, mostra em tempo real a quantidade de vagas disponíveis em nosso  </h3>
+ <h3>estacionamento e o número de carros.E para facilitar ainda mais a sua vida,você pode </h3>
+ <h3>abrir a cancela pelo celular!Isso mesmo, basta ter uma conexão com a internet.</h3>
+      </div>
+
+      <br/>
+      <hr/>
+      <h2><b> Quantidade de carros:</h2><h2 id="qtdcarros"></b> </h2>
+     <h2> <b>Vagas disponíveis:</h2><span id="valor"></b></h2>
+     <div >
+                
+        <p><h1> <b>Cancela </b></h1></p>
+      
+        <button type="button" class="btn btn-info Light-lg" onclick="abrirCancela()"> 
+            Abrir 
+             </button>
+            <button type="button" class="btn btn-info Light-lg" onclick="fecharCancela()"> 
+            Fechar </h2>
+      </div>
+       
+      
+       
+        
+    
+                
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>    
+    
+        <script>
+
+            var conn = io.conect("http//estacionalegal.herokuapp.com")
+        
+            function cancelaIn(){
+            document.getElementById("cancela").innerHTML = "aberta"
+            conn.emit("cancelaIn")
+         }
+    
+         function cancelaOut(){
+            document.getElementById("cancela").innerHTML = "fechada"
+            conn.emit("cancelaOut")
+         }
+        
+            conn.on("atualiza",function(dados){
+                if("VAGAS" in dados){
+                    document.getElementById("vagas").innerHTML = dados["VAGAS"]
+    
+                }
+            if("CANCELA" in dados){
+                if(dados ["CANCELA"]==1){
+                    document.getElementById("cancela").innerHTML ="ESTACIONAMENTO LOTADO!"
+                }else{
+                    document.getElementById("cancela").innerHTML ="HÁ VAGAS"
+                }
+            }
+            if("VAGAS" in dados){
+                    document.getElementById("valor").innerHTML = dados["VAGAS"]
+                   
+                }
+            if("QTDCARROS" in dados){
+                document.getElementById("qtdcarros").innerHTML = 3 - dados["VAGAS"]
+            }
+             
+            })
+        </script>
+    </body>
+
+</html>
+
