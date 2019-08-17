@@ -81,7 +81,7 @@ Olha só que legal! É análoga a explicação anterior, basta acessar o menu Va
 O usuário também pode ter acesso a nossa interface WEB, através de qualquer dispositivo que possua acesso a Internet. Para ter o acesso basta acessar o link:
 http://estacionalegal.herokuapp.com 
 
-![Site](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/Imagem12.1.png)
+![Site](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/Interface%20Web.jpg)
 
 Através dela podemos abrir ou fechar a cancela, saber a quantidade de carros no estacionamento, bem como as vagas disponíveis.
 Para a realização do site, utilizamos através de rotas o Json(JavaScript Object Notation), assim podemos comutar os dados entre o site, arduino e o QT creator.
