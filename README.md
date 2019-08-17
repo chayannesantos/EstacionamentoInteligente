@@ -98,6 +98,11 @@ Para a comunicação é preciso criar as rotas, assim como os sinais que serão 
 
 ![CodigoSite2](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/rotas.jpg)
 
+## Entendendo a comunicação
+
+Para estabelecer a comunicação usamos o JSON. O arduino e o QT Creator se comunicam entre si e enviam as informações para a interface o web.
+![Comunicacao](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/Comunica%C3%A7%C3%A3o.jpg)
+
 ## Protótipo
 
 O desenvolvimento lógico do protótipo contém três segmentos básicos:
