@@ -90,13 +90,13 @@ Para a realização do site, utilizamos através de rotas o Json(JavaScript Obje
 
 Para executar a atualização, fazemos o uso do conn.emit que a cada dado novo modifica a informação. 
 
-![CodigoSite1](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/Imagem13.jpg)
+![CodigoSite1](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/atualiza.jpg)
 
 ### Como podemos emitir os sinais no app.py?
 
 Para a comunicação é preciso criar as rotas, assim como os sinais que serão emitidos do site para o circuito. Fizemos o uso do socketio.on para que esse sinal fosse emitido.
 
-![CodigoSite2](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/Imagem14.jpg)
+![CodigoSite2](https://github.com/chayannesantos/EstacionamentoInteligente/blob/master/Imagens%20do%20Manual/rotas.jpg)
 
 ## Protótipo
 
